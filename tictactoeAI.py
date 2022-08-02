@@ -1,5 +1,3 @@
-#Tic Tac Toe game in python
-
 board = [' ' for x in range(10)]
 
 def insertLetter(letter, pos):
@@ -35,9 +33,9 @@ def playerMove():
                     run = False
                     insertLetter('X', move)
                 else:
-                    print('Sorry, this space is occupied!')
+                    print('Already occupied!')
             else:
-                print('Please type a number within the range!')
+                print('give a number in range!')
         except:
             print('Please type a number!')
             
@@ -99,7 +97,7 @@ def main():
             playerMove()
             printBoard(board)
         else:
-            print('Sorry, O\'s won this time!')
+            print('Computer is Winner')
             break
 
         if not(isWinner(board, 'X')):
@@ -111,14 +109,14 @@ def main():
                 print('Computer placed an \'O\' in position', move , ':')
                 printBoard(board)
         else:
-            print('X\'s won this time! Good Job!')
+            print('You win! Good Job!')
             break
 
     if isBoardFull(board):
         print('Tie Game!')
 
 while True:
-    answer = input('Do you want to play again? (Y/N)')
+    answer = input('Press Y for play else n (Y/N)')
     if answer.lower() == 'y' or answer.lower == 'yes':
         board = [' ' for x in range(10)]
         print('-----------------------------------')
